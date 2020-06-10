@@ -1,0 +1,13 @@
+def is_valid_IP(string):
+    string = string.split('.')
+    if len(string) != 4:
+        return False
+    for x in string:
+        if not x.isnumeric():
+            return False
+        elif len(x)>1 and x[0]== '0':
+            return False
+        if int(x) < 0 or int(x) > 255:
+            return False
+
+    return True
